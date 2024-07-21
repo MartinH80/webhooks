@@ -18,6 +18,11 @@ RUN apk add mailx
 # Copy webhooks file
 COPY webhooks.php /var/www/localhost/htdocs/webhooks.php
 
-# Run apache webserver
+# Expose port 80 for apache webserver
 EXPOSE 80
-ENTRYPOINT ["/usr/sbin/httpd", "-DFOREGROUND"]
+
+# copy startup script
+ADD startup.sh /startup.sh
+
+# Execute startup script
+CMD ["/bin/sh","-c","/startup.sh"]
