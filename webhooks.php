@@ -1,7 +1,7 @@
 <?php
 
-if ($_SERVER['REQUEST_METHOD'] !== "GET" ) {
-  echo "Only accepting GET requests.";
+if ( ($_SERVER['REQUEST_METHOD'] !== "GET") && ($_SERVER['REQUEST_METHOD'] !== "POST") ) {
+  echo "Only accepting GET or POST requests.";
   http_response_code(405);
   exit(1);
 }
