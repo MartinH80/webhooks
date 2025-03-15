@@ -9,7 +9,7 @@ RUN apk update
 RUN apk upgrade
 
 # install apache and php
-RUN apk add php83-apache2
+RUN apk add php84-apache2
 
 # install msmtp and mailx to allow PHP to send mail
 RUN apk add msmtp
